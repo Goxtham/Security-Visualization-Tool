@@ -87,6 +87,137 @@
             transition: all 0.3s ease;
             z-index: 1000;
         }
+
+        /* Update mobile-responsive styles */
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+                padding: 10px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            section {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+                line-height: 1.8;
+            }
+
+            .image img {
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .quiz-button {
+                position: fixed;
+                top: 20px;  /* Keep at top */
+                right: 20px;
+                padding: 8px 16px; /* Slightly smaller padding on mobile */
+                font-size: 0.9rem;
+                /* Remove bottom positioning */
+            }
+
+            /* Add padding to header to prevent quiz button overlap */
+            header {
+                padding-top: 70px;
+            }
+
+            /* Improve grid visualization on mobile */
+            .grid-container {
+                overflow-x: auto;
+            }
+
+            .grid-label {
+                min-width: 120px;
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+
+            .grid-cell {
+                min-width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+
+            /* Improve protocol visualization */
+            .step {
+                padding: 12px;
+                margin-bottom: 12px;
+            }
+
+            .step strong {
+                font-size: 1.1rem;
+            }
+
+            .step p {
+                font-size: 1rem;
+                margin: 8px 0;
+            }
+
+            /* Improve controls */
+            .controls {
+                flex-wrap: wrap;
+            }
+
+            .controls button {
+                width: 100%;
+                margin: 5px 0;
+                padding: 12px;
+                font-size: 1.1rem;
+            }
+
+            /* Improve modal for mobile */
+            .quiz-modal {
+                width: 90%;
+                max-height: 80vh;
+                margin: 10vh auto;
+            }
+
+            .close-quiz {
+                font-size: 2rem;
+                padding: 10px;
+            }
+        }
+
+        /* Add styles for better figure/image handling */
+        figure {
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        figure img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        figcaption {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
     </style>
     <link rel="stylesheet" href="../css/quiz.css">
     <script src="../js/chatbot.js"></script>
