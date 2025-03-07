@@ -626,38 +626,11 @@
         }, {passive: true});
       });
     });
+    </script>
 
-    // Simple placeholder for chatbot functionality
-    function handleUserInput() {
-      const userInput = document.getElementById('user-input');
-      const chatMessages = document.getElementById('chat-messages');
-      
-      if (userInput.value.trim() !== '') {
-        // Add user message
-        const userMessage = document.createElement('div');
-        userMessage.className = 'message user-message';
-        userMessage.textContent = userInput.value;
-        chatMessages.appendChild(userMessage);
-        
-        // Simulate bot response
-        setTimeout(() => {
-          const botMessage = document.createElement('div');
-          botMessage.className = 'message bot-message';
-          botMessage.textContent = "I'm your security algorithm assistant. I can help explain how these algorithms work.";
-          chatMessages.appendChild(botMessage);
-          
-          // Scroll to bottom
-          chatMessages.scrollTop = chatMessages.scrollHeight;
-        }, 1000);
-        
-        // Clear input
-        userInput.value = '';
-        
-        // Scroll to bottom
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      }
-    }
-  </script>
+    
+    <link rel="stylesheet" href="css/chatbot.css">
+    <script src="js/chatbot.js"></script>
 
   <!-- Add these styles for chat messages -->
   <style>
