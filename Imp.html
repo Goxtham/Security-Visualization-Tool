@@ -11,6 +11,9 @@
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, #1e1e2f 0%, #2c2c44 100%);
+            min-height: 100vh; /* Ensure full height */
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
         }
 
         .animate-fade {
@@ -83,6 +86,26 @@
             transition: all 0.3s ease;
             z-index: 1000;
         }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Stack vertically */
+            padding: 20px;
+            flex: 1; /* Allow the container to fill available space */
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: column; /* Keep it column on larger screens */
+            }
+        }
+
+        /* Mobile view adjustments */
+        @media (max-width: 768px) {
+            .flex {
+                flex-direction: column; /* Stack input and button vertically */
+            }
+        }
     </style>
     <link rel="stylesheet" href="css/quiz.css">
     <script src="js/chatbot.js"></script>
@@ -102,6 +125,8 @@
                     placeholder="Enter message to hash"
                     class="flex-grow px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
+            </div>
+            <div class="mt-4 flex justify-center">
                 <button 
                     onclick="visualizeHash()"
                     class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors"
@@ -152,8 +177,7 @@
                         <div class="bg-white p-3 rounded">
                             <p class="font-medium text-sm">Working Variables (like mixing bowls):</p>
                             <ul class="list-disc list-inside text-sm mt-2">
-                                <li>a, b, c, d, e, f, g, h - Eight "bowls" where we mix our data</li>
-                                <li>Each bowl holds a 32-bit number (like a recipe amount)</li>
+                                <li>h0, h1, h2, h3, h4, h5, h6, h7</li>
                             </ul>
                         </div>
                         
