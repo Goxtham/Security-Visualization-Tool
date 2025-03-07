@@ -40,7 +40,7 @@
             z-index: 1000;
         }
         
-        /* Add all other quiz styles from AES/index.html */
+        /* Quiz modal styles */
         .quiz-modal {
             display: none;
             position: fixed;
@@ -57,7 +57,104 @@
             z-index: 1001;
             overflow-y: auto;
         }
-        /* Add remaining quiz styles */
+
+        /* Common styles for both desktop and mobile */
+        .p-q-container {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .p-section, .q-section {
+            width: 50%;
+        }
+
+        .parameter-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .parameter-col {
+            flex: 1;
+        }
+
+        .list-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+
+        /* Desktop specific styles */
+        @media (min-width: 413px) {
+            .container {
+                padding: 15px;
+            }
+
+            .card {
+                margin-bottom: 15px;
+            }
+
+            .list-group-item {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
+        /* Mobile specific styles */
+        @media (max-width: 412px) {
+            .container {
+                width: 100%;
+                padding: 8px;
+                max-width: 412px;
+            }
+            
+            .card {
+                margin-bottom: 10px;
+            }
+            
+            .card-body {
+                padding: 10px;
+            }
+            
+            .form-control {
+                font-size: 14px;
+                padding: 6px;
+            }
+            
+            .list-group-item {
+                font-size: 12px;
+                padding: 4px;
+                text-align: center;
+            }
+            
+            .btn {
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+            
+            .quiz-button {
+                top: 8px;
+                right: 8px;
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            
+            .quiz-modal {
+                width: 95%;
+                padding: 1rem;
+            }
+
+            h4.card-title {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+
+            small.form-text {
+                font-size: 11px;
+            }
+        }
     </style>
     <link rel="stylesheet" href="../css/quiz.css">
     <script src="../js/chatbot.js"></script>
@@ -67,8 +164,9 @@
 <body>
             <div class="container">
                 <h4 id="rsa-nav">RSA</h4>
-                <div class="row">
-                    <div class="col-4">
+                <div class="p-q-container">
+                    <!-- P Section -->
+                    <div class="p-section">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">p</h4>
@@ -79,39 +177,18 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-2">
                         <div class="list-group">
                             <button type="button" class="btn btn-secondary p-primes list-group-item">17</button>
                             <button type="button" class="btn btn-secondary p-primes list-group-item">859</button>
                             <button type="button" class="btn btn-secondary p-primes list-group-item">619</button>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="list-group">
                             <button type="button" class="btn btn-secondary p-primes list-group-item">1249</button>
                             <button type="button" class="btn btn-secondary p-primes list-group-item">2663</button>
                             <button type="button" class="btn btn-secondary p-primes list-group-item">3593</button>
                         </div>
                     </div>
-                    <div class="col-2">
-                        <div class="list-group">
-                            <button type="button" class="btn btn-secondary p-primes list-group-item">5641</button>
-                            <button type="button" class="btn btn-primary p-primes list-group-item">53093</button>
-                            <button type="button" class="btn btn-primary p-primes list-group-item">41077</button>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="list-group">
-                            <button type="button" class="btn btn-secondary p-primes list-group-item">75539</button>
-                            <button type="button" class="btn btn-secondary p-primes list-group-item">613471</button>
-                            <button type="button" class="btn btn-success p-primes list-group-item">999491</button>
-                        </div>
-                    </div>
-                </div>
-                <div style="margin-top:20px;"></div>
-                <div class="row">
-                    <div class="col-4">
+
+                    <!-- Q Section -->
+                    <div class="q-section">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">q</h4>
@@ -122,39 +199,19 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-2">
                         <div class="list-group">
                             <button type="button" class="btn btn-secondary q-primes list-group-item">433</button>
                             <button type="button" class="btn btn-secondary q-primes list-group-item">1039</button>
                             <button type="button" class="btn btn-secondary q-primes list-group-item">1847</button>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="list-group">
                             <button type="button" class="btn btn-secondary q-primes list-group-item">4421</button>
                             <button type="button" class="btn btn-secondary q-primes list-group-item">5419</button>
                             <button type="button" class="btn btn-secondary q-primes list-group-item">6053</button>
                         </div>
                     </div>
-                    <div class="col-2">
-                        <div class="list-group">
-                            <button type="button" class="btn btn-primary q-primes list-group-item">75253</button>
-                            <button type="button" class="btn btn-secondary q-primes list-group-item">39359</button>
-                            <button type="button" class="btn btn-secondary q-primes list-group-item">692581</button>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="list-group">
-                            <button type="button" class="btn btn-success q-primes list-group-item">126199</button>
-                            <button type="button" class="btn btn-primary q-primes list-group-item">431147</button>
-                            <button type="button" class="btn btn-primary q-primes list-group-item">990809</button>
-                        </div>
-                    </div>
                 </div>
                 <div style="margin-top:20px;"></div>
-                <div class="row">
-                    <div class="col">
+                <div class="parameter-row">
+                    <div class="parameter-col">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">n</h4>
@@ -167,7 +224,7 @@
                         </div>
                     </div>
 
-                    <div class="col">
+                    <div class="parameter-col">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">ϕ(n)</h4>
@@ -179,8 +236,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col">
+                <div class="parameter-row">
+                    <div class="parameter-col">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">x</h4>
@@ -198,7 +257,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+
+                    <div class="parameter-col">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">E</h4>
@@ -215,7 +275,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+
+                    <div class="parameter-col">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">D</h4>
